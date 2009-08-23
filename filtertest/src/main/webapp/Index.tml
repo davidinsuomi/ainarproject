@@ -1,0 +1,31 @@
+<html t:type="layout" title="filtertest Index"
+      t:sidebarTitle="Current Time"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+    <p>${message:greeting}</p>
+
+    <p:sidebar>
+
+        <p>
+            Just to prove this is live:
+        </p>
+
+        <p>The current time is: ${currentTime}.</p>
+
+
+        <p>
+            [<t:pagelink page="Index">refresh</t:pagelink>]
+        </p>
+        
+        <t:form>
+        <t:errors/>
+        	<input t:type="upload" t:id="file" validate="required"/>
+        	<input t:type="textField" t:id="text1"/>
+        <br/>
+        	<input type="submit" value="Upload"/>
+    	</t:form>
+    </p:sidebar>
+
+</html>
