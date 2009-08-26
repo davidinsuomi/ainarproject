@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PushbackInputStream;
 import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Main {
@@ -15,6 +17,12 @@ public class Main {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
+		Map<String, String> rowData = new HashMap(0);
+		rowData.put("jura", "fdf");
+		String codeField = null;
+		String valueS = ((String) rowData.get(codeField));
+		
+		
 		InputStream fstream = new FileInputStream("d:\\jura.txt");
 		PushbackInputStream pushback = new PushbackInputStream(fstream, 4);
 		/*
