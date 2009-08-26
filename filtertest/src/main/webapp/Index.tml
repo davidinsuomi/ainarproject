@@ -25,6 +25,8 @@
         	<input t:type="textField" t:id="text1"/>
         <br/>
         	<input type="submit" value="Upload"/>
+        	<t:select model="supportedEncodings" value="selectedEncoding" blankOption="ALWAYS" 
+        	blankLabel="Autodetect" encoder="encodingValueEncoder"/>
     	</t:form>
     </p:sidebar>
 
