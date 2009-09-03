@@ -18,16 +18,8 @@
         <p>
             [<t:pagelink page="Index">refresh</t:pagelink>]
         </p>
-        
-        <t:form>
-        <t:errors/>
-        	<input t:type="upload" t:id="file" validate="required"/>
-        	<input t:type="textField" t:id="text1"/>
-        <br/>
-        	<input type="submit" value="Upload"/>
-        	<t:select model="supportedEncodings" value="selectedEncoding" blankOption="ALWAYS" 
-        	blankLabel="Autodetect" encoder="encodingValueEncoder"/>
-    	</t:form>
+                
+    <t:formComp t:id="something1"/>
     </p:sidebar>
 
 </html>
