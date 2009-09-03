@@ -11,20 +11,35 @@ import java.util.StringTokenizer;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.Field;
+import org.apache.tapestry5.FieldValidator;
+import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.OptionGroupModel;
 import org.apache.tapestry5.OptionModel;
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.SelectModelVisitor;
+import org.apache.tapestry5.ValidationException;
 import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.annotations.Component;
+import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.beaneditor.Validate;
+import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.internal.OptionModelImpl;
+import org.apache.tapestry5.internal.services.FieldValidatorImpl;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.ioc.annotations.InjectResource;
 import org.apache.tapestry5.ioc.annotations.InjectService;
+import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.upload.services.UploadedFile;
 
 import utils.SupportedEncodingsSelectModel;
 
+import com.playtech.filtertest.components.FormComp;
 import com.playtech.filtertest.services.Pointless;
 
 /**
@@ -59,35 +74,33 @@ public class Index
 	@Property
 	private UploadedFile file;
 	
-	@Property
-	private String text1;
 	
+	/*
 	public void onSuccess()
 	{
 		System.out.println(file.getFileName());
 		System.out.println(text1);; 
 	}
-	
-	@Property
-	@Persist("flash")
-	private Charset selectedEncoding;
-	
-	public List<Charset> getSupportedEncodings(){
-		return new ArrayList((Charset.availableCharsets()).values());
-	}
-	
-	public ValueEncoder getEncodingValueEncoder(){
-		ValueEncoder encodingValueEncoder = new ValueEncoder(){
+	*/
 
-			public String toClient(Object arg0) {
-				return arg0.toString();
+	@Inject
+	private ComponentResources resources;
+	
+	@Inject
+	private Request req;
+	
+	@OnEvent(value = "prepareForSubmit")
+	public void doValidation(){
+		Form myform = (Form)resources.getEmbeddedComponent("something1").getComponentResources().getEmbeddedComponent("form2");
+		String value = req.getParameter("text1");
+		//TextField text1 = (TextField)resources.getEmbeddedComponent("something1").getComponentResources().getEmbeddedComponent("text1");
+		//if(text1. == null || text1.toString().equals("")){
+			myform.recordError("hakka toole");
+			System.out.println(value);
+			for(String s : req.getParameterNames()){
+				System.out.println(s);
 			}
-
-			public Object toValue(String arg0) {
-				return Charset.forName(arg0);
-			}
-		};
-		return encodingValueEncoder;
+		//}
 	}
 	
 	/*
