@@ -18,7 +18,7 @@ public class PointlessDecoratorImpl implements PointlessDecorator{
     			
     			//System.out.println(invocation.getResult());
     			if(invocation.getResultType().equals(int.class) && 
-    					Integer.parseInt(invocation.getResult().toString())>310){
+    					Integer.parseInt(invocation.getResult().toString())>350){
     				invocation.overrideResult(new Integer(1000).intValue());
     			}
     		}

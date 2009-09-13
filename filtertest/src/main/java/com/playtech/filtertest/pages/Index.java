@@ -54,7 +54,7 @@ public class Index
 	private HttpServletRequest request;
 	
 	public Date getCurrentTime() 
-	{ 
+	{
 		jura.addInt();
 		System.out.println(jura.getInt());
 		System.out.println("-------------------");
@@ -89,8 +89,10 @@ public class Index
 	@Inject
 	private Request req;
 	
+	
 	@OnEvent(value = "prepareForSubmit")
-	public void doValidation(){
+	public void doValidation() throws InterruptedException {
+		/*
 		Form myform = (Form)resources.getEmbeddedComponent("something1").getComponentResources().getEmbeddedComponent("form2");
 		String value = req.getParameter("text1");
 		//TextField text1 = (TextField)resources.getEmbeddedComponent("something1").getComponentResources().getEmbeddedComponent("text1");
@@ -100,15 +102,14 @@ public class Index
 			for(String s : req.getParameterNames()){
 				System.out.println(s);
 			}
-		//}
+		*/
 	}
 	
 	/*
 	public SelectModel getSupportedEncodings(){
 		
 	}
-	*/
-	/*
+
 	public SelectModel getSupportedEncodings(){
 		SelectModel encodingModel = new EncodingModel extends AbstractSelectmodel{
 			public List<OptionGroupModel> getOptionGroups() {

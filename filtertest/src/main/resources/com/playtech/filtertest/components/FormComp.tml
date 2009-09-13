@@ -5,10 +5,10 @@
 	 
 	<t:form t:id="form2">
     	<t:errors/>
-        <!--        	<input t:type="upload" t:id="file"/> -->
+        <input t:type="upload" t:id="file"/>
         <input t:type="textField" t:id="text1"/>
         <br/>
-        <input type="submit" value="Upload"/>
+        <t:submit t:mixins="ProgressBar" value="Upload"/>
         <t:select model="supportedEncodings" value="selectedEncoding" blankOption="ALWAYS" 
         blankLabel="Autodetect" encoder="encodingValueEncoder"/>
     </t:form>
