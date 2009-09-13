@@ -1,8 +1,10 @@
 package com.playtech.filtertest.services;
 
 import java.io.IOException;
+import java.util.Collection;
 
 import org.apache.tapestry5.*;
+import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.Invocation;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.MethodAdvice;
@@ -35,8 +37,18 @@ public class AppModule
     	binder.bind(PointlessDecorator.class, PointlessDecoratorImpl.class);
     }
     
-    public static Pointless buildPointlessness(Pointful pointful){
-    	return new PointlessImpl(pointful.getInitialvalue());
+    public static Pointless buildPointlessness(Pointful pointful, Collection<Integer> contribution){
+    	int value = pointful.getInitialvalue();
+    	for(int i : contribution){
+    		value = value + i;
+    	}
+    	return new PointlessImpl(value);
+    }
+    
+    
+    public static void contributePointlessness(Configuration<Integer> configuration){
+    	configuration.add(5);
+    	configuration.add(3);
     }
     
     // Töötab kuid decoreerimise testiks ei hakka kasutam advice ja decorate asju koos

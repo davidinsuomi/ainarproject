@@ -1,5 +1,6 @@
 package com.playtech.filtertest.components;
 
+import java.io.File;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,19 +11,26 @@ import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.ValidationException;
 import org.apache.tapestry5.Validator;
 import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Component;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.corelib.components.Submit;
 import org.apache.tapestry5.corelib.components.TextField;
+import org.apache.tapestry5.upload.services.UploadedFile;
 import org.apache.tapestry5.validator.Required;
 
 public class FormComp {
 	@Persist("flash")
 	@Property
 	private String output;
+	
+	@Property
+	private UploadedFile file;
 	
 	@Property
 	//@Validate("required")
@@ -35,7 +43,10 @@ public class FormComp {
 		output = text1;
 	}
 	
-	
+	@OnEvent(value = "prepareForSubmit")
+	public void doSomething(){
+	}
+		
 	@Property
 	@Persist("flash")
 	private Charset selectedEncoding;

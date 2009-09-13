@@ -2,7 +2,8 @@
       t:sidebarTitle="Current Time"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
       xmlns:p="tapestry:parameter">
-        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml
+-->
 
     <p>${message:greeting}</p>
 
@@ -12,14 +13,13 @@
             Just to prove this is live:
         </p>
 
-        <p>The current time is: ${currentTime}.</p>
+        <p>The current time is.</p>
 
 
         <p>
-            [<t:pagelink page="Index">refresh</t:pagelink>]
-        </p>
-                
-    <t:formComp t:id="something1"/>
+            [<t:pagelink page="Index">refrsdsdesh</t:pagelink>]
+        </p>              
+    	<t:formComp t:id="something1"/>
     </p:sidebar>
 
 </html>
