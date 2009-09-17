@@ -11,18 +11,26 @@ import java.util.StringTokenizer;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.tapestry5.ClientElement;
 import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.ContentType;
 import org.apache.tapestry5.Field;
 import org.apache.tapestry5.FieldValidator;
+import org.apache.tapestry5.Link;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.OptionGroupModel;
 import org.apache.tapestry5.OptionModel;
+import org.apache.tapestry5.RenderSupport;
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.SelectModelVisitor;
 import org.apache.tapestry5.ValidationException;
 import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Component;
+import org.apache.tapestry5.annotations.Environmental;
+import org.apache.tapestry5.annotations.IncludeJavaScriptLibrary;
 import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.InjectContainer;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
@@ -35,7 +43,9 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.InjectResource;
 import org.apache.tapestry5.ioc.annotations.InjectService;
 import org.apache.tapestry5.services.Request;
+import org.apache.tapestry5.services.ResponseRenderer;
 import org.apache.tapestry5.upload.services.UploadedFile;
+import org.apache.tapestry5.util.TextStreamResponse;
 
 import utils.SupportedEncodingsSelectModel;
 
@@ -45,6 +55,7 @@ import com.playtech.filtertest.services.Pointless;
 /**
  * Start page of application filtertest.
  */
+@IncludeJavaScriptLibrary("ajaxbutton.js")
 public class Index
 {
 	@InjectService("pointlessness")
@@ -53,6 +64,39 @@ public class Index
 	@Inject
 	private HttpServletRequest request;
 	
+	@Environmental
+	private RenderSupport renderSupport;
+	
+	@Inject
+	private ComponentResources resources;
+	
+	@InjectComponent
+    private ClientElement ajaxbutton;
+	
+	@Inject
+    private ResponseRenderer responseRenderer;
+	
+	private String updatetextid = "updateparagraph";
+	
+    @AfterRender
+    public void afterRender(MarkupWriter writer) {
+    	System.out.println(ajaxbutton.getClientId());
+    	Link link = resources.createEventLink("ajaxbuttonrequest");
+    	renderSupport.addScript(String.format("new Ajaxbutton('%s', '%s', '%s');",
+    			ajaxbutton.getClientId(), link.toAbsoluteURI(), updatetextid));
+    }
+	
+    public String getUpdatetextid(){
+    	return updatetextid;
+    }
+    
+    @OnEvent("ajaxbuttonrequest")
+    public Object onAjaxButtonClick(){
+    	ContentType contentType = responseRenderer.findContentType(this);
+    	System.out.println("See on button click");
+    	return new TextStreamResponse(contentType.toString(), (new Date()).toString()); 
+    }
+    
 	public Date getCurrentTime() 
 	{
 		jura.addInt();
@@ -83,9 +127,6 @@ public class Index
 	}
 	*/
 
-	@Inject
-	private ComponentResources resources;
-	
 	@Inject
 	private Request req;
 	

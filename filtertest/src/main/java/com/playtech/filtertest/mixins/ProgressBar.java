@@ -2,6 +2,7 @@ package com.playtech.filtertest.mixins;
 
 import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.ClientElement;
+import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.RenderSupport;
 import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Environmental;
@@ -12,13 +13,13 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.dom.Element;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
-@IncludeJavaScriptLibrary("progressScript.js")
+@IncludeJavaScriptLibrary("progressindicator.js")
 public class ProgressBar {
 
 	@Inject
-	@Path("progressbar.gif")
+	@Path("progressindicator.gif")
 	@Property
-	private Asset progressGif;
+	private Asset indicatorImage;
 	
 	@Environmental
 	private RenderSupport renderSupport;
@@ -27,9 +28,16 @@ public class ProgressBar {
     private ClientElement element;
 	
     @AfterRender
-    public void afterRender() {
-            renderSupport.addScript(String.format("new Confirm('%s', '%s');",
-            		element.getClientId(), progressGif));
+    public void afterRender(MarkupWriter writer) {
+    	String imageId = element.getClientId() + "-indicator";
+    	
+    	renderSupport.addScript(String.format("new ProgressIndicator('%s', '%s');",
+    			element.getClientId(), imageId));
+    	writer.element("img", 
+    			"id", imageId,
+    			"src", indicatorImage,
+    			"style", "padding-left: 7px; padding-right: 7px;");
+    	writer.end();
     }
 
 }
