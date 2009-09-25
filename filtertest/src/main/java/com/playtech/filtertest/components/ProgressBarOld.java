@@ -12,7 +12,7 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 @IncludeJavaScriptLibrary("progressScript.js")
-public class ProgressBar {
+public class ProgressBarOld {
 
 	@Inject
 	@Path("progressbar.gif")

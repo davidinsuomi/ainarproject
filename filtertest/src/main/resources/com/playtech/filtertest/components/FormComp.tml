@@ -8,7 +8,7 @@
         <input t:type="upload" t:id="file"/>
         <input t:type="textField" t:id="text1"/>
         <br/>
-        <t:submit t:mixins="ProgressBar" value="Upload"/>
+        <t:submit value="Upload" t:mixins="ProgressBar" t:progressTime="literal:20"/>
         <t:select model="supportedEncodings" value="selectedEncoding" blankOption="ALWAYS" 
         blankLabel="Autodetect" encoder="encodingValueEncoder"/>
     </t:form>
