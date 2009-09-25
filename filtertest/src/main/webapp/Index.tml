@@ -12,14 +12,24 @@
         <p>
             Just to prove this is live:
         </p>
-
-        <p>The current time is.</p>
-
-
-        <p>
+        <p id="${updatetextid}">Standard algus</p>
+        <button t:type="any" t:id="ajaxbutton">ajaxbutton</button>
+   		
+   		<t:zone t:id="timezone">
+   			<p>The current time is ${currentTime}</p>
+   		</t:zone>
+   		
+   		<t:actionlink t:zone="timezone" t:id="updatezone">UpdateZone</t:actionlink>
+       	<p>
             [<t:pagelink page="Index">refrsdsdesh</t:pagelink>]
         </p>              
     	<t:formComp t:id="something1"/>
+    	
+    	<br/>
+    	
+    	<t:form t:zone="timezone" t:id="timezoneform">
+    		<t:submit t:value="submittimezone" t:mixins="ProgressBar" t:progresstime="15"/>
+    	</t:form>
     </p:sidebar>
 
 </html>

@@ -37,6 +37,7 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.TextField;
+import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.internal.OptionModelImpl;
 import org.apache.tapestry5.internal.services.FieldValidatorImpl;
 import org.apache.tapestry5.ioc.annotations.Inject;
@@ -62,7 +63,7 @@ public class Index
 	private Pointless jura;
 	
 	@Inject
-	private HttpServletRequest request;
+	private Request request;
 	
 	@Environmental
 	private RenderSupport renderSupport;
@@ -97,8 +98,26 @@ public class Index
     	return new TextStreamResponse(contentType.toString(), (new Date()).toString()); 
     }
     
+    @InjectComponent
+    private Zone timezone;
+    
+    @OnEvent(value = "action", component = "updatezone")
+    public Object updateTimezone(){
+    	return timezone.getBody();
+    }
+    
+    @OnEvent(value = "success", component = "timezoneform")
+    public Object updateTimezoneForm(){
+    	return timezone.getBody();
+    }
+    
 	public Date getCurrentTime() 
 	{
+		/*
+		for(String s : request.getHeaderNames()){
+			System.out.println(s + " " + request.getHeader(s));
+		}
+		
 		jura.addInt();
 		System.out.println(jura.getInt());
 		System.out.println("-------------------");
@@ -113,6 +132,8 @@ public class Index
 				System.out.println(acceptEncodingTokens.nextToken());
 		}
 		System.out.println("-------------------");
+		*/
+		
 		return new Date();
 	}
 	@Property

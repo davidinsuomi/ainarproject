@@ -1,0 +1,26 @@
+/*  CSS for JavaScript status bar */
+.progressBar_statusBar{
+	background: url(statusIndicator.png) no-repeat;
+	width: 250px;
+	height: 15px;
+	border:1px solid silver;
+	margin-right:auto;
+	margin-left:auto;
+}
+.progressBar_frame{
+	width:302px; 
+	height:60px; 
+	border:1px solid silver; 
+	position:absolute; 
+	text-align: center; 
+	background: white;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:15px;
+	line-height: 30px;
+}
+.progressBar_whiteOverlay{
+	float:right;
+	height:15px;
+	width: 250px;
+}
+
