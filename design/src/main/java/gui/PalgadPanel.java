@@ -11,19 +11,13 @@
 
 package gui;
 
-import java.awt.Color;
-
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JViewport;
-import javax.swing.table.JTableHeader;
-
-import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 /**
  *
  * @author Administrator
  */
+@SuppressWarnings("serial")
 public class PalgadPanel extends javax.swing.JPanel {
 
     /** Creates new form PalgadPanel */    public PalgadPanel() {
