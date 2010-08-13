@@ -12,11 +12,11 @@ public class ConnectionManager {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(
-					"jdbc:mysql:///test",
-			        "root", 
-			        "secret"
+					"jdbc:mysql://smartdesign.ee/np25851_is",
+			        "np25851_is", 
+			        "aaaaa"
 			);
-
+			connection.setTransactionIsolation( Connection.TRANSACTION_SERIALIZABLE );
 		}
 		catch ( Exception e) {
 			Alert.alert( e );
