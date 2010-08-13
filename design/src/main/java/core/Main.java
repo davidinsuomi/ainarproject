@@ -2,9 +2,12 @@ package core;
 
 import gui.MainFrame;
 
+import java.util.List;
+
 import javax.swing.UIManager;
 
-import manager.ConnectionManager;
+import manager.ProjectsManager;
+import model.Project;
 
 public class Main {
 	
@@ -21,6 +24,7 @@ public class Main {
 		mainFrame = new MainFrame();
 		mainFrame.setVisible(true);
 		
-		ConnectionManager.getConnection();
+		List<Project> projects = ( new ProjectsManager() ).readAll();
+		int i = 0;
 	}
 }
