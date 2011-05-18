@@ -1,0 +1,4 @@
+Options +FollowSymlinks
+RewriteEngine on
+rewritecond %{http_host} ^paevapraed.com [nc]
+rewriterule ^(.*)$ http://www.paevapraed.com/$1 [r=301,nc] 
