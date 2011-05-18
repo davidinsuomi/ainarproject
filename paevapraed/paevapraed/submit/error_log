@@ -1,0 +1,160 @@
+[14-Dec-2010 23:31:33] PHP Warning:  include_once(common.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/marikako/public_html/paevapraed.com/submit/index.php on line 17
+[14-Dec-2010 23:31:33] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'common.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/marikako/public_html/paevapraed.com/submit/index.php on line 17
+[14-Dec-2010 23:31:33] PHP Warning:  include_once(utils.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/marikako/public_html/paevapraed.com/submit/index.php on line 18
+[14-Dec-2010 23:31:33] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'utils.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/marikako/public_html/paevapraed.com/submit/index.php on line 18
+[14-Dec-2010 23:31:33] PHP Warning:  include_once(classes.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/marikako/public_html/paevapraed.com/submit/index.php on line 19
+[14-Dec-2010 23:31:33] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'classes.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/marikako/public_html/paevapraed.com/submit/index.php on line 19
+[14-Dec-2010 23:31:33] PHP Fatal error:  Class 'Registry' not found in /home/marikako/public_html/paevapraed.com/submit/index.php on line 43
+[14-Dec-2010 23:32:17] PHP Notice:  Undefined index:  code in /home/marikako/public_html/paevapraed.com/submit/index.php on line 47
+[14-Dec-2010 23:33:04] PHP Notice:  Undefined index:  code in /home/marikako/public_html/paevapraed.com/submit/index.php on line 47
+[14-Dec-2010 23:42:44] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 52
+[15-Dec-2010 00:21:29] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 52
+[15-Dec-2010 00:36:26] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 52
+[15-Dec-2010 00:38:22] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 52
+[15-Dec-2010 00:45:50] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:45:50] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 56
+[15-Dec-2010 00:45:51] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:45:51] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:45:52] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:45:53] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:45:54] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:45:55] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:47] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:47] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:48] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:48] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:49] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:50] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:52] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:46:53] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:47:53] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:47:53] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:47:54] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:47:54] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:47:54] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:47:54] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:49:59] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:50:00] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:50:13] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:51:33] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:51:33] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 56
+[15-Dec-2010 00:51:33] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:51:33] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:51:39] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:51:39] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:51:42] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:03] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:04] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:05] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:05] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:08] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:08] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:35] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:52:37] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:54:37] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/submit/index.php on line 47
+[15-Dec-2010 00:54:37] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:54:42] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/submit/index.php on line 47
+[15-Dec-2010 00:54:42] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 00:58:05] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:58:05] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:58:20] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:58:21] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:06] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:06] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:17] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:17] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:34] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:35] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:37] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 00:59:40] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:00:21] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:00:21] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:00:25] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:00:25] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:02:47] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:02:47] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:02:59] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:03:02] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:03:24] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:03:24] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:03:24] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:03:25] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:03:25] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:03:25] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:15] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:15] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:15] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:16] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:17] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:17] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:17] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:18] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:18] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:18] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:18] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:18] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:04:18] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:34] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:34] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:34] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:35] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:35] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:35] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:36] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:36] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:36] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:39] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:39] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:39] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:40] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:40] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:40] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:40] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:40] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:40] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:44] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:44] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:44] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:45] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:45] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:09:45] PHP Notice:  Undefined index:  query in /home/marikako/public_html/paevapraed.com/classes.php on line 10
+[15-Dec-2010 01:10:57] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:10:59] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:04] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:04] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:16] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:16] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:21] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:21] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:23] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:24] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:29] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:30] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:47] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:47] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:50] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:11:50] PHP Notice:  Undefined offset:  1 in /home/marikako/public_html/paevapraed.com/submit/index.php on line 54
+[15-Dec-2010 01:18:41] PHP Parse error:  syntax error, unexpected '{' in /home/marikako/public_html/paevapraed.com/submit/index.php on line 47
+[15-Dec-2010 01:19:00] PHP Parse error:  syntax error, unexpected '{' in /home/marikako/public_html/paevapraed.com/submit/index.php on line 128
+[15-Dec-2010 01:19:13] PHP Parse error:  syntax error, unexpected '{' in /home/marikako/public_html/paevapraed.com/submit/index.php on line 128
+[15-Dec-2010 01:19:14] PHP Parse error:  syntax error, unexpected '{' in /home/marikako/public_html/paevapraed.com/submit/index.php on line 128
+[15-Dec-2010 09:48:01] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 52
+[15-Dec-2010 10:51:57] PHP Parse error:  syntax error, unexpected ';' in /home/marikako/public_html/paevapraed.com/submit/index.php on line 51
+[15-Dec-2010 10:52:22] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 55
+[15-Dec-2010 10:54:44] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 50
+[15-Dec-2010 10:54:45] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 50
+[15-Dec-2010 10:54:57] PHP Notice:  Undefined variable: dinerCode in /home/marikako/public_html/paevapraed.com/submit/index.php on line 50
+[15-Dec-2010 10:55:22] PHP Fatal error:  Call to undefined function  decrypt() in /home/marikako/public_html/paevapraed.com/submit/index.php on line 51
+[16-Dec-2010 10:41:27] PHP Fatal error:  Call to undefined function  br2nl() in /home/marikako/public_html/paevapraed.com/submit/index_test.php on line 280
+[16-Dec-2010 10:41:28] PHP Fatal error:  Call to undefined function  br2nl() in /home/marikako/public_html/paevapraed.com/submit/index_test.php on line 280
+[04-Feb-2011 08:46:18] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/marikako/public_html/paevapraed.com/common.php on line 5
+[04-Feb-2011 08:46:29] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/marikako/public_html/paevapraed.com/common.php on line 5
+[04-Feb-2011 08:46:38] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/marikako/public_html/paevapraed.com/common.php on line 5
