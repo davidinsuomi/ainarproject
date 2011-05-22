@@ -2080,6 +2080,10 @@ function getDiner($dinercode){
 	if($dinercode == "TREHV"){
 		$diner = DinerTrehv::processDiner( $diner, $debug == $dinercode );
 	}
+	
+	if($dinercode == "PANDA"){
+		$diner = DinerPanda::processDiner( $diner, $debug == $dinercode );
+	}
 
 	// clean away all extra spaces and duplicates
 	$diner = cleanDiner($diner);
@@ -2139,17 +2143,6 @@ function removeEmptyTags($input){
 		usleep( 1000 );
 	}
 	return $result;
-}
-
-function getDateFromWeekday($weekday){
-	if(date("N") > date("N", strtotime($weekday))){
-		$millis = strtotime("last ".$weekday);
-	}
-	else{
-		$millis = strtotime($weekday);
-	}
-	$date = date( "Y", $millis)."-".date( "m", $millis)."-".date( "d", $millis);
-	return $date;
 }
 
 function hasNewFoods($oldDiner, $newDiner){

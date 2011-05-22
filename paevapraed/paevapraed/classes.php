@@ -30,6 +30,10 @@ class Diner{
 		array_push($this->datefoods, $datefood);
 	}
 	
+	public function addDateFoods( $datefoods ){
+		$this->datefoods = $datefoods;
+	}
+	
 	public function clearDateFoods(){
 		$this->datefoods = array();
 	}

@@ -185,6 +185,17 @@ function getYear($date){
 	return $year;
 }
 
+function getDateFromWeekDay( $weekDay ){
+	if(date("N") > date("N", strtotime($weekDay))){
+		$millis = strtotime("last ".$weekDay);
+	}
+	else{
+		$millis = strtotime($weekDay);
+	}
+	$date = date( "Y", $millis)."-".date( "m", $millis)."-".date( "d", $millis);
+	return $date;
+}
+
 class EstDates{
 	public static $abr = array(
 		"01" => "jaanuar",
