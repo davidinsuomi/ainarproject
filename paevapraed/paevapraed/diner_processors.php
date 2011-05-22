@@ -291,4 +291,114 @@ class DinerTrehv{
 		return $diner;
 	}
 }
+
+class DinerPanda{
+	
+	public static function processDiner( $diner, $debug ){
+		if( ( date( "N" ) == 1 && date( "G" ) >= 11 && date( "i" ) >= 30 ) || 
+				( date( "N" ) >= 2 && date( "N" ) <= 5 ) ){
+			$url = "http://pandarestoran.ee";
+			$html = getHtml( $url );
+			if( $html == null ){
+				throw new Exception("No data retrieved");
+			}
+			$item = $html->find("td[valign=top] table[width=448 px]", 0);
+			
+			if($item == null){
+				throw new Exception("Specified tag not found");
+			}
+			$result = $item->innertext();
+			// most important splitter
+			$item = preg_split("/(<(.*?)>)/", $result, null);
+			$level = 0;
+			$noFoodCount = 0;
+			$foodType = null;
+			$infoArray = array();
+			$mealArray = array();
+			$soupArray = array();
+			$date = null;
+			define( "MEAL", "meal" );
+			define( "SOUP", "soup" );
+			foreach($item as $element){
+				usleep( 1000 );
+				$element = cleanString( $element );
+				$element = utf8_encode( $element );
+				if( $debug ){
+					echo println( $element );
+				}
+				if( $level == 0 || $level == 2 ){
+					if( preg_match( "/p.*evapraad.*hind/", strtolower( $element ) ) ){
+						$info = ucfirst( mb_strtolower( $element, "UTF-8" ) );
+						array_push( $infoArray, $info );
+						$foodType = MEAL;
+						println( "meal info: ".$info );
+						$level = 0;
+						continue;
+					} elseif( preg_match( "/p.*evasupp.*hind/", strtolower( $element ) ) ){
+						$info = ucfirst( mb_strtolower( $element, "UTF-8" ) );
+						array_push( $infoArray, $info );
+						$foodType = SOUP;
+						println( "soup info: ".$info );
+						$level = 0;
+						continue;
+					}
+				}
+				if( $level == 0 || $level == 2 ){
+					$weekDay = EstDates::getWeekdayFromDayLetterUpper( $element );
+					if( $weekDay != null ){
+						println( "weekday: ".$weekDay );
+						$date = getDateFromWeekDay( $weekDay );
+						println( "date: ".$date );
+						$level = 1;
+						continue;
+					}
+				}
+				if( $level == 1 || $level == 2 ){
+					if( $element != null ){
+						if( $foodType == MEAL ){
+							if( array_key_exists( $date, $mealArray ) ){
+								$meal = $mealArray[$date]." - ".$element;
+							} else{
+								$meal = $element;
+							}
+							$mealArray[$date] = $meal;
+							println( "meal: ".$meal );
+							$level = 2;
+						} elseif( $foodType == SOUP ){
+							if( array_key_exists( $date, $soupArray ) ){
+								$soup = $soupArray[$date]." - ".$element;
+							} else{
+								$soup = $element;
+							}
+							$soupArray[$date] = $soup;
+							println( "soup: ".$soup );
+							$level = 2;
+						}
+					}
+				}
+				
+			}
+			$info = implode( "<br/>", $infoArray );
+			$dateFoods = self::createDateFoodsByMerge( $mealArray, $soupArray, $info );
+			$diner->addDateFoods( $dateFoods );
+		} else{
+			println( "Wrong time" );
+		}
+		return $diner;
+				
+	}
+	
+	private static function createDateFoodsByMerge( $firstFoodArray, $secondFoodArray, $info ){
+		$dateFoods = array();
+		foreach( $firstFoodArray as $date => $firstFood ){
+			if( array_key_exists( $date, $secondFoodArray ) ){
+				$food = $firstFood."<br/>".$secondFoodArray[$date];
+				$dateFood = new DateFood( $date, $food, $info );
+				println( "datefood: ".$dateFood );
+				array_push( $dateFoods, $dateFood );
+			}
+		}
+		return $dateFoods;
+	}
+}
 ?>
