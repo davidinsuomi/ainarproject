@@ -1669,63 +1669,67 @@ function getDiner($dinercode){
 	}
 
 	if($dinercode == "NOIR"){
-		$url = "http://www.cafenoir.ee/noir/";
-		$html = getHtml( $url );
-		if( $html == null ){
-			throw new Exception("No data retrieved");
-		}
-		$item = $html->find("body", 0);
+		if( date( "N" ) >= 1 && date( "N" ) <= 5 ){
+			$url = "http://www.cafenoir.ee/noir/";
+			$html = getHtml( $url );
+			if( $html == null ){
+				throw new Exception("No data retrieved");
+			}
+			$item = $html->find("body", 0);
 
-		if($item == null){
-			throw new Exception("Specified tag not found");
-		}
-		// remove empty tags
-		$result = $item->innertext();
-		// $result = removeEmptyTags($item->innertext());
-		// most important splitter
-		$item = preg_split("/(<(.*?)>)/", $result, null);
-		$date = null;
-		$noFoodCount = 0;
-		$foodArray = array();
-		foreach($item as $element){
-			usleep( 1000 );
-			$element = trim(str_ireplace("&nbsp;", " ", $element));
-			if($debug == $dinercode){
-				echo $element.$bnl;
+			if($item == null){
+				throw new Exception("Specified tag not found");
 			}
-			if($date == null && preg_match("/t.+na\s*.*\s*pakume|p.*evapakkumine/", strtolower($element)) == 1){
-				$date = date( "Y-m-d" );
-				echo $element.$bnl;
-				continue;
-			}
-			if($date != null){
-				if($element != null){
-					if( preg_match("/(veetke|meiega|sinu noir|cafe noir)/", strtolower($element) ) == 1 ){
-						break;
+			// remove empty tags
+			$result = $item->innertext();
+			// $result = removeEmptyTags($item->innertext());
+			// most important splitter
+			$item = preg_split("/(<(.*?)>)/", $result, null);
+			$date = null;
+			$noFoodCount = 0;
+			$foodArray = array();
+			foreach($item as $element){
+				usleep( 1000 );
+				$element = trim(str_ireplace("&nbsp;", " ", $element));
+				if($debug == $dinercode){
+					echo $element.$bnl;
+				}
+				if($date == null && preg_match("/t.+na\s*.*\s*pakume|p.*evapakkumine/", strtolower($element)) == 1){
+					$date = date( "Y-m-d" );
+					echo $element.$bnl;
+					continue;
+				}
+				if($date != null){
+					if($element != null){
+						if( preg_match("/(veetke|meiega|sinu noir|cafe noir)/", strtolower($element) ) == 1 ){
+							break;
+						}
+						if($noFoodCount <= 8){
+							array_push($foodArray, $element);
+							echo "food: ".$element.$bnl;
+							$noFoodCount = 0;
+						}
 					}
-					if($noFoodCount <= 8){
-						array_push($foodArray, $element);
-						echo "food: ".$element.$bnl;
-						$noFoodCount = 0;
+					if($element == null && count($foodArray) > 0){
+						$noFoodCount++;
 					}
 				}
-				if($element == null && count($foodArray) > 0){
-					$noFoodCount++;
+				if($noFoodCount > 8){
+					break;
 				}
 			}
-			if($noFoodCount > 8){
-				break;
+			$food = implode("<br/>", $foodArray);
+			$food = preg_replace( "/\<br\/\>(?=\d)/", " ", $food );
+			echo $bnl."allfoods: ".$food.$bnl;
+			$newDiner = new Diner( $dinercode );
+			$newDiner->addDateFood(new DateFood($date, $food));
+			$oldDiner = readDiner( $dinercode );
+			if( hasNewFoods( $oldDiner, $newDiner ) ){
+				$diner = $newDiner;
+				echo "datefood added :".$date." ".$food.$bnl;
 			}
-		}
-		$food = implode("<br/>", $foodArray);
-		$food = preg_replace( "/\<br\/\>(?=\d)/", " ", $food );
-		echo $bnl."allfoods: ".$food.$bnl;
-		$newDiner = new Diner( $dinercode );
-		$newDiner->addDateFood(new DateFood($date, $food));
-		$oldDiner = readDiner( $dinercode );
-		if( hasNewFoods( $oldDiner, $newDiner ) ){
-			$diner = $newDiner;
-			echo "datefood added :".$date." ".$food.$bnl;
+		} else{
+			println( "Wrong time" );
 		}
 
 	}
