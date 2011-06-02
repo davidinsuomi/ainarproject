@@ -132,29 +132,35 @@ class DinerKahkukas{
 				continue;
 			}
 			if( $infoStartedLevel >= 0 && $infoStartedLevel <= 2 ){
-				$month = EstDates::getMonthFromMonthName( $element );
-				if( $month != null ){
-					if( preg_match( "/^\d\d?/", $element, $dayArray ) );
-					$day = $dayArray[0];
-					$day = numToLeadingZero( $day );
+				$weekDay = EstDates::getWeekdayFromDayName( $element );
+				if( $weekDay != null ){
+					$infoStartedLevel = 1;
+					continue;
+				}
+			}
+			if( $infoStartedLevel == 1 ){
+				if( preg_match( "/\d\d\.\d\d/", $element, $dateArray ) ){
+					$splitDateArray = explode( ".", $dateArray[0] );
+					$day = numToLeadingZero( $splitDateArray[0] );
+					$month = numToLeadingZero( $splitDateArray[1] );
 					$date = $month."-".$day;
 					$date = getYear( $date )."-".$date;
-					$infoStartedLevel = 1;
+					$infoStartedLevel = 2;
 					println( "date: ".$date );
 					println( "infoStartedLevel: ". $infoStartedLevel );
 					continue;
 				}
 			}
-			if( $infoStartedLevel == 1 ){
+			if( $infoStartedLevel == 2 ){
 				if( $element != null ){
 					$foodArray = self::addFood( $foodArray, $element );
-					$infoStartedLevel = 2;
+					$infoStartedLevel = 3;
 					println( "infoStartedLevel: ". $infoStartedLevel );
 					continue;
 				}
 			}
-			if( $infoStartedLevel == 2 ){
-				if( $noFoodCount >= 2 ){
+			if( $infoStartedLevel == 3 ){
+				if( $noFoodCount >= 3 ){
 					$dateFood = new DateFood( $date, implode( $foodArray, "</br>") );
 					println( "dateFood: ".$dateFood );
 					array_push( $dateFoods, $dateFood );
@@ -176,7 +182,7 @@ class DinerKahkukas{
 					$soup = mb_ucfirst( $soup, "UTF-8" );
 					println( "soup: ".$soup );
 					foreach( $dateFoods as $dateFood ){
-						$dateFood->setFood( $dateFood->getFood()."</br>".$soup );
+						$dateFood->setFood( $dateFood->getFood()."</br>".$soup."€" );
 						println( "dateFood: ".$dateFood );
 						$diner->addDateFood( $dateFood );
 					}
