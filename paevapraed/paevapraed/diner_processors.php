@@ -231,14 +231,16 @@ class DinerTrehv{
 			if( $level == 0 ){
 				if( $element != null ){
 					if( preg_match( "/N.*DALA\sMEN.*/", $element ) ){
-						continue;
-					} else{
-						$info = $element;
-						println( "info: ".$info );
-						array_push( $infoArray, $info );
 						$level = 1;
 						continue;
 					}
+//					} else{
+//						$info = $element;
+//						println( "info: ".$info );
+//						array_push( $infoArray, $info );
+//						$level = 1;
+//						continue;
+//					}
 				}
 			}
 			if( $level == 1 ){
