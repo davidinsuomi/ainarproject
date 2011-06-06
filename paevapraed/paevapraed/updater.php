@@ -2105,10 +2105,10 @@ function cleanDiner($diner){
 	foreach($diner->getDateFoods() as $elementKey => $element){
 		usleep( 1000 );
 		$food = trim(preg_replace("/\s+/"," ",str_replace("\xC2\xA0", " ", str_ireplace("&nbsp;", " ", $element->getFood()))));
-		$food = strip_tags( $food, "<br>" );
+		$food = strip_tags( $food, "<br/><br></br>" );
 		$element->setFood($food);
 		$info = trim(preg_replace("/\s+/"," ",str_ireplace("&nbsp;", " ", $element->getInfo())));
-		$info = strip_tags( $info, "<br>" );
+		$info = strip_tags( $info, "<br/><br></br>" );
 		$element->setInfo($info);
 		
 		// remove datefoods which already exist whith same date
