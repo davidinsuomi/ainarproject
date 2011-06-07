@@ -4,7 +4,8 @@ $inactive = 2592000;
 
 ini_set('session.gc_maxlifetime',$inactive); 
 ini_set('session.gc_probability',1); 
-ini_set('session.gc_divisor',1); 
+ini_set('session.gc_divisor',1);
+ini_set( 'session.cookie_lifetime', $inactive );
 session_set_cookie_params( $inactive );
 if( !session_start() ){
 	die( "Error, can not start session" );
