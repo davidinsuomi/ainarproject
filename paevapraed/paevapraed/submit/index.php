@@ -2,6 +2,7 @@
 // set session timeout period in seconds
 $inactive = 2592000;
 
+ini_set('session.save_path',"0;".dirname($_SERVER['SCRIPT_FILENAME'])."/sessions"); 
 ini_set('session.gc_maxlifetime',$inactive); 
 ini_set('session.gc_probability',1); 
 ini_set('session.gc_divisor',1);
