@@ -1,4 +1,0 @@
-RewriteEngine On
-RewriteCond %{REQUEST_URI} !\.(css|jpg|gif|png|jar|js|html|htm|php)$
-RewriteRule ^diner/([^/]*)$ ?code=$1 [L]
-RewriteRule ^diner/([^/]*)/([^/]*)$ ?code=$1&page=$2 [L]
