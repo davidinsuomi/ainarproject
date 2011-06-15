@@ -2013,6 +2013,11 @@ function getDiner($dinercode){
 				if( preg_match( "/head isu!/", strtolower( $element ) ) == 1 ){
 					break;
 				}
+				if( EstDates::getMonthFromMonthName( $element) ){
+					$infoStartedLevel = 3;
+					println( "infoStartedLevel: ".$infoStartedLevel );
+					continue;
+				}
 			}
 			if( $infoStartedLevel == 2 || $infoStartedLevel == 3 ){
 				if( preg_match( "/^\d\d?\.\d\d?\.\d\d\d?\d?$/", $element ) == 1 ){
